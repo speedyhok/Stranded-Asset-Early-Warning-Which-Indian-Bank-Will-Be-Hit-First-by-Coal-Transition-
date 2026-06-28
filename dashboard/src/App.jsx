@@ -768,7 +768,7 @@ function App() {
                       >
                         {glowNode && <circle cx={cX} cy={cY} r="28" fill="url(#breachGlow)" style={{animation:'pulseGlow 2s infinite'}} />}
                         <circle cx={cX} cy={cY} r="18" fill="#ffffff" stroke={nodeColor} strokeWidth="3" />
-                        <text x={cX} y={cY - 22} className="node-label">{c.name.split(' ')[0]}</text>
+                        <text x={cX} y={cY - 22} className="node-label">{c.name.startsWith('Company ') ? c.name.replace('Company ', '') : c.name.split(' ')[0]}</text>
                         <text x={cX} y={cY + 4} className="node-sublabel" fill="var(--text-secondary)" style={{fontSize:'8px'}}>{pdVal.toFixed(1)}% PD</text>
                       </g>
                     );
