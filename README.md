@@ -165,5 +165,5 @@ This project is configured to run on Render as a **Python Web Service** utilizin
 **Configuration on Render:**
 1.  **Service Type:** Web Service
 2.  **Environment:** Python
-3.  **Build Command:** `cd dashboard && npm install && npm run build && cd .. && pip install -r requirements.txt`
+3.  **Build Command:** `pip install -r requirements.txt` (the compiled React dist folder is committed to git)
 4.  **Start Command:** `gunicorn app:app`
