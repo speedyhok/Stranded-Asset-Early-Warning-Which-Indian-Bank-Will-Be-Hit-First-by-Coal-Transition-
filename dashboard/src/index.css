@@ -1,0 +1,150 @@
+/*
+ * Climate Credit Risk & Systemic Contagion Model
+ * Copyright (c) 2026 Mohibul Hoque
+ * Email: hokworks@gmail.com
+ * LinkedIn: linkedin.com/in/speedymohibul
+ * License: MIT License
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Premium Light Mode Color Palette */
+  --bg-main: #f8fafc; /* Crisp cool slate white */
+  --bg-surface: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+  --bg-surface-hover: rgba(255, 255, 255, 0.95);
+  --border-glow: rgba(2, 132, 199, 0.15);
+  --border-muted: rgba(15, 23, 42, 0.06); /* Very clean, subtle border */
+  
+  --primary: #0284c7; /* Sky Blue (Accessible Darker Blue) */
+  --primary-glow: rgba(2, 132, 199, 0.25);
+  --secondary: #7c3aed; /* Royal Violet */
+  --secondary-glow: rgba(124, 58, 237, 0.25);
+  
+  --success: #059669; /* Emerald Green */
+  --warning: #d97706; /* Amber Orange */
+  --danger: #dc2626; /* Crimson Red */
+  
+  --text-primary: #0f172a; /* Deep Slate (900) */
+  --text-secondary: #475569; /* Medium Slate (600) */
+  --text-muted: #64748b; /* Muted Slate (500) */
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-premium: 0 10px 30px -10px rgba(15, 23, 42, 0.06); /* Very soft dark shadow */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(2, 132, 199, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Containers */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-muted);
+  border-radius: 16px;
+  box-shadow: var(--shadow-premium);
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 12px 35px -10px rgba(15, 23, 42, 0.08);
+}
+
+.glass-panel-glow:hover {
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 20px -5px rgba(2, 132, 199, 0.1), var(--shadow-premium);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Utility Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Tab buttons */
+.tab-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-button:hover {
+  color: var(--text-primary);
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.tab-button.active {
+  color: var(--primary);
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+}
