@@ -7,7 +7,9 @@
 from flask import Flask, send_from_directory, jsonify
 import os
 
-app = Flask(__name__, static_folder='dashboard/dist', static_url_path='')
+base_dir = os.path.abspath(os.path.dirname(__file__))
+static_dir = os.path.join(base_dir, 'dashboard', 'dist')
+app = Flask(__name__, static_folder=static_dir, static_url_path='')
 
 @app.route('/api/health')
 def health():
