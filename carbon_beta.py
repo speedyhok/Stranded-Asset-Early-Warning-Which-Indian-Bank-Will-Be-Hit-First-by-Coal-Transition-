@@ -34,7 +34,7 @@ CLIMATE_MITIGATION_KEYWORDS = [
 # High-fidelity simulated earnings call transcripts for sentiment analysis
 MOCK_TRANSCRIPTS = {
     "Coal India": """
-    In this quarter, our primary focus remains meeting India's growing domestic energy demand. 
+    In this quarter, our focus remains meeting India's growing domestic energy demand. 
     Coal production has hit record highs. While we acknowledge global discussions around coal phase-out, 
     domestic demand is robust. We are facing some regulatory risk regarding carbon tax increases and 
     environmental regulation compliance costs, which might increase our cost of production. 
@@ -79,6 +79,28 @@ MOCK_TRANSCRIPTS = {
     CBAM represents a medium-term export risk. Decarbonization is central to our strategy. We are allocating 
     substantial transition capex for green steel and hydrogen pilots. Compliance costs for environmental regulation 
     will increase, but this is necessary to prevent our European assets from becoming stranded assets.
+    """,
+
+    "Company X": """
+    Our operations are heavily reliant on thermal coal sourcing. We are experiencing major challenges 
+    due to rising carbon tax penalty structures. Our regulatory risk has increased substantially. 
+    We do not have any renewable energy capacity planned, and our transition capex is zero. 
+    Older thermal machinery might become a stranded asset. Compliance costs for environmental regulation 
+    are severely hurting our EBITDA. We are struggling to secure new debt, and refinancing risk is extremely high.
+    """,
+
+    "Company Y": """
+    This quarter has been extremely difficult. Our coal-fired boilers are facing carbon penalty charges. 
+    The carbon tax increase has hit our margins. We have no transition capex, nor do we have a net zero target. 
+    Environmental regulation is forcing us to shut down lines, leading to potential stranded assets. 
+    Refinancing risk is critical as banks are refusing to roll over our fossil-fuel backed loans.
+    """,
+
+    "Company Z": """
+    Our carbon-heavy steel mills are heavily penalized by carbon price surges. We face direct carbon costs 
+    and carbon tax liabilities that we cannot pass on. We have zero investment in green technology like electric arc 
+    or green hydrogen. We face severe regulatory risk and compliance costs. Refinancing risk is imminent, 
+    with short-term debt maturities coming due in months and capital markets blocked for fossil expansion.
     """
 }
 

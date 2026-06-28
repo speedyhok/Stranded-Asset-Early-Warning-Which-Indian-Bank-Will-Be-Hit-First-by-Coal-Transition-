@@ -679,8 +679,8 @@ function App() {
                       if (expVal < 1000) return null; // Only draw substantial loans
                       
                       const compInfo = stressResults.companies[company];
-                      const cX = company === 'Coal India' ? 320 : company === 'NTPC' ? 440 : company === 'Adani Power' ? 420 : company === 'JSW Steel' ? 320 : 380;
-                      const cY = company === 'Coal India' ? 150 : company === 'NTPC' ? 160 : company === 'Adani Power' ? 220 : company === 'JSW Steel' ? 210 : 180;
+                      const cX = company === 'Coal India' ? 320 : company === 'NTPC' ? 440 : company === 'Adani Power' ? 420 : company === 'JSW Steel' ? 320 : company === 'Tata Steel' ? 380 : company === 'Company X' ? 350 : company === 'Company Y' ? 470 : company === 'Company Z' ? 230 : 380;
+                      const cY = company === 'Coal India' ? 150 : company === 'NTPC' ? 160 : company === 'Adani Power' ? 220 : company === 'JSW Steel' ? 210 : company === 'Tata Steel' ? 180 : company === 'Company X' ? 110 : company === 'Company Y' ? 260 : company === 'Company Z' ? 170 : 180;
 
                       // Stressed stroke color
                       const pd = compInfo.pd18m;
@@ -747,8 +747,8 @@ function App() {
 
                   {/* Draw Company Nodes */}
                   {Object.values(stressResults.companies).map((c) => {
-                    const cX = c.name === 'Coal India' ? 320 : c.name === 'NTPC' ? 440 : c.name === 'Adani Power' ? 420 : c.name === 'JSW Steel' ? 320 : 380;
-                    const cY = c.name === 'Coal India' ? 150 : c.name === 'NTPC' ? 160 : c.name === 'Adani Power' ? 220 : c.name === 'JSW Steel' ? 210 : 180;
+                    const cX = c.name === 'Coal India' ? 320 : c.name === 'NTPC' ? 440 : c.name === 'Adani Power' ? 420 : c.name === 'JSW Steel' ? 320 : c.name === 'Tata Steel' ? 380 : c.name === 'Company X' ? 350 : c.name === 'Company Y' ? 470 : c.name === 'Company Z' ? 230 : 380;
+                    const cY = c.name === 'Coal India' ? 150 : c.name === 'NTPC' ? 160 : c.name === 'Adani Power' ? 220 : c.name === 'JSW Steel' ? 210 : c.name === 'Tata Steel' ? 180 : c.name === 'Company X' ? 110 : c.name === 'Company Y' ? 260 : c.name === 'Company Z' ? 170 : 180;
                     const pdVal = c.pd18m * 100;
                     
                     let nodeColor = '#38bdf8';

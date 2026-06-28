@@ -18,7 +18,10 @@ COMPANIES = {
     "Coal India": "COALINDIA.NS",
     "Adani Power": "ADANIPOWER.NS",
     "JSW Steel": "JSWSTEEL.NS",
-    "Tata Steel": "TATASTEEL.NS"
+    "Tata Steel": "TATASTEEL.NS",
+    "Company X": "X.NS",
+    "Company Y": "Y.NS",
+    "Company Z": "Z.NS"
 }
 MARKET_INDEX = "^NSEI" # Nifty 50
 
@@ -79,7 +82,10 @@ def fetch_or_generate_market_data(start_date="2016-01-01", end_date="2026-06-01"
             "Coal India": {"m_beta": 0.7, "c_beta": -0.30, "vol": 0.018, "start": 200.0},
             "Adani Power": {"m_beta": 1.2, "c_beta": -0.25, "vol": 0.025, "start": 80.0},
             "JSW Steel": {"m_beta": 1.1, "c_beta": -0.10, "vol": 0.020, "start": 300.0},
-            "Tata Steel": {"m_beta": 1.15, "c_beta": -0.12, "vol": 0.021, "start": 90.0}
+            "Tata Steel": {"m_beta": 1.15, "c_beta": -0.12, "vol": 0.021, "start": 90.0},
+            "Company X": {"m_beta": 1.4, "c_beta": -0.45, "vol": 0.035, "start": 50.0},
+            "Company Y": {"m_beta": 1.5, "c_beta": -0.50, "vol": 0.040, "start": 40.0},
+            "Company Z": {"m_beta": 1.6, "c_beta": -0.55, "vol": 0.045, "start": 30.0}
         }
         
         # Generate synthetic carbon price index proxy
@@ -218,6 +224,30 @@ def get_company_financials():
             "Refinancing_Years": 3.0,
             "EBITDA_INR_Cr": 28000.0,
             "Total_Debt_INR_Cr": 70000.0
+        },
+        "Company X": {
+            "Debt_EBITDA": 6.5,
+            "Carbon_Rev_Pct": 0.92,
+            "Capex_Fossil_Renewable": 10.0,
+            "Refinancing_Years": 1.0,
+            "EBITDA_INR_Cr": 5000.0,
+            "Total_Debt_INR_Cr": 32500.0
+        },
+        "Company Y": {
+            "Debt_EBITDA": 7.8,
+            "Carbon_Rev_Pct": 0.95,
+            "Capex_Fossil_Renewable": 12.0,
+            "Refinancing_Years": 0.8,
+            "EBITDA_INR_Cr": 3000.0,
+            "Total_Debt_INR_Cr": 23400.0
+        },
+        "Company Z": {
+            "Debt_EBITDA": 8.5,
+            "Carbon_Rev_Pct": 0.98,
+            "Capex_Fossil_Renewable": 15.0,
+            "Refinancing_Years": 0.5,
+            "EBITDA_INR_Cr": 2000.0,
+            "Total_Debt_INR_Cr": 17000.0
         }
     }
     return pd.DataFrame(financials).T
@@ -291,11 +321,11 @@ def get_banking_network():
     }
     
     exposures = {
-        "SBI": {"Coal India": 2500.0, "NTPC": 28000.0, "Adani Power": 12000.0, "JSW Steel": 9500.0, "Tata Steel": 11000.0},
-        "PNB": {"Coal India": 800.0,  "NTPC": 11000.0, "Adani Power": 6500.0,  "JSW Steel": 4000.0, "Tata Steel": 4500.0},
-        "BOB": {"Coal India": 1200.0, "NTPC": 9500.0,  "Adani Power": 5000.0,  "JSW Steel": 3500.0, "Tata Steel": 5000.0},
-        "ICICI": {"Coal India": 300.0, "NTPC": 4000.0,  "Adani Power": 2200.0,  "JSW Steel": 6000.0, "Tata Steel": 8500.0},
-        "HDFC": {"Coal India": 200.0,  "NTPC": 3500.0,  "Adani Power": 1500.0,  "JSW Steel": 7000.0, "Tata Steel": 9000.0}
+        "SBI": {"Coal India": 2500.0, "NTPC": 28000.0, "Adani Power": 12000.0, "JSW Steel": 9500.0, "Tata Steel": 11000.0, "Company X": 6000.0, "Company Y": 5000.0, "Company Z": 4000.0},
+        "PNB": {"Coal India": 800.0,  "NTPC": 11000.0, "Adani Power": 6500.0,  "JSW Steel": 4000.0, "Tata Steel": 4500.0, "Company X": 4500.0, "Company Y": 3500.0, "Company Z": 3000.0},
+        "BOB": {"Coal India": 1200.0, "NTPC": 9500.0,  "Adani Power": 5000.0,  "JSW Steel": 3500.0, "Tata Steel": 5000.0, "Company X": 4000.0, "Company Y": 3000.0, "Company Z": 2500.0},
+        "ICICI": {"Coal India": 300.0, "NTPC": 4000.0,  "Adani Power": 2200.0,  "JSW Steel": 6000.0, "Tata Steel": 8500.0, "Company X": 1500.0, "Company Y": 1000.0, "Company Z": 800.0},
+        "HDFC": {"Coal India": 200.0,  "NTPC": 3500.0,  "Adani Power": 1500.0,  "JSW Steel": 7000.0, "Tata Steel": 9000.0, "Company X": 1000.0, "Company Y": 800.0,  "Company Z": 500.0}
     }
     
     interbank = {
