@@ -152,9 +152,18 @@ The dashboard has been built as a high-performance React application utilizing c
    python prepare_web_dashboard_data.py
    ```
 
-4. Start the interactive React dashboard:
+4. Start the interactive React dashboard locally:
    ```bash
    cd dashboard
    npm install
    npm run dev
    ```
+
+### Render Deployment (Python Web Service)
+This project is configured to run on Render as a **Python Web Service** utilizing Flask to serve the compiled React frontend static assets.
+
+**Configuration on Render:**
+1.  **Service Type:** Web Service
+2.  **Environment:** Python
+3.  **Build Command:** `cd dashboard && npm install && npm run build && cd .. && pip install -r requirements.txt`
+4.  **Start Command:** `gunicorn app:app`
